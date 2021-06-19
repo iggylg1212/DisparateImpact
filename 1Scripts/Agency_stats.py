@@ -59,19 +59,23 @@ df = df.sort_values(['RATIO'], ascending=[False])
 df = df[['NAME','STATENAME','HOMICIDES','HOMICIDES_BLACK','SHARE_BLACK_K','HOMICIDES_WHITE','SHARE_WHITE_K','POPULATION','BLACK_POPULATION','SHARE_BLACK','WHITE_POPULATION','SHARE_WHITE','SHARE_POVERTY','OFFICERS/1kPOP','RATIO']]
 
 # # Descriptive Stats
-round(df.describe(), 2).to_csv('../4Outputs/csv/stats_DR_pop.csv')
+# round(df.describe(), 2).to_csv('../4Outputs/csv/stats_DR_pop.csv')
 
 # # High-Low Ratio Comparisons
 # df = df[df['HOMICIDES']>2]
-highest = df.head(10)
-lowest = df[df['RATIO']>0].tail(10)
-hl = pd.concat([highest,lowest])
-hl.to_csv('../4Outputs/csv/highlow.csv')
+# highest = df.head(10)
+# lowest = df[df['RATIO']>0].tail(10)
+# hl = pd.concat([highest,lowest])
+# hl.to_csv('../4Outputs/csv/highlow.csv')
 
 # # K_B == 0 vs 1
-df1 = df[df['HOMICIDES']==1]
+# df1 = df[df['HOMICIDES']==1]
 # sns.displot(df1, x= "SHARE_BLACK", hue='HOMICIDES_BLACK', kind='kde', cut=0)
 # sns.displot(df1, x= "SHARE_BLACK", hue='HOMICIDES_BLACK', stat='normed')
 # plt.show()
-round(df1[df1['HOMICIDES_BLACK']==0].describe(),2).to_csv('../4Outputs/csv/stats_K1_KB0.csv')
-round(df1[df1['HOMICIDES_BLACK']==1].describe(),2).to_csv('../4Outputs/csv/stats_K1_KB1.csv')
+# round(df1[df1['HOMICIDES_BLACK']==0].describe(),2).to_csv('../4Outputs/csv/stats_K1_KB0.csv')
+# round(df1[df1['HOMICIDES_BLACK']==1].describe(),2).to_csv('../4Outputs/csv/stats_K1_KB1.csv')
+#
+# df2 = df1[df1['SHARE_BLACK']<.1]
+# round(df2[df2['HOMICIDES_BLACK']==0].describe(),2).to_csv('../4Outputs/csv/stats_K1_KB0_2.csv')
+# round(df2[df2['HOMICIDES_BLACK']==1].describe(),2).to_csv('../4Outputs/csv/stats_K1_KB1_2.csv')
